@@ -1,19 +1,40 @@
-title: the Simplex theme
-logo_img: /assets/img/icons/golasblog_logo.svg
-favicon: /assets/favicon.ico
-description: description
+# -----------------------------------------------------------
+# Jekyll Configuration for Simplex Theme on GitHub Pages
+# -----------------------------------------------------------
+
+title: "Simplex Theme Blog"
+description: "A simple, neat blogging theme."
+logo_img: /assets/img/icons/golasblog_logo.svg   # 필요 시 교체
+favicon: /assets/favicon.ico                     # 필요 시 교체
 global_tags: jekyll theme simplex golasblog responsive html5
-copyright: © Golasowski 2021
+copyright: © YourName 2025
 
+# GitHub Pages에서 유효한 URL
+baseurl: ""  # 루트 도메인을 사용할 때는 비움
+url: "https://mouse-ear.github.io"
+
+# Simplex 원격 테마 설정 (andreondra 저장소 사용 예시)
+remote_theme: andreondra/jekyll-theme-simplex@master
+
+# GitHub Pages에서 remote_theme 기능이 작동하도록 플러그인 추가
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Sass 압축 설정
 sass:
-    style: compressed
+  style: compressed
 
+# 카테고리 / 작가 정보 기능 (테마에서 사용 가능)
 collections:
-    category:
-        output: true
-    authors:
-        output: false
+  category:
+    output: true
+  authors:
+    output: false
 
+# 카테고리 레이아웃 기본값 설정
 defaults:
   -
     scope:
@@ -21,3 +42,11 @@ defaults:
       type: category
     values:
       layout: "category"
+
+# 빌드 시 제외할 항목들
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
