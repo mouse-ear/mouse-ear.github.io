@@ -1,24 +1,23 @@
-title: "Mouse Ear Blog"
-email: "your-email@example.com"
-description: >-
-  Write an awesome description for your new site here.
-baseurl: ""
-url: "https://mouse-ear.github.io"
+title: the Simplex theme
+logo_img: /assets/img/icons/golasblog_logo.svg
+favicon: /assets/favicon.ico
+description: description
+global_tags: jekyll theme simplex golasblog responsive html5
+copyright: © Golasowski 2021
 
-twitter_username: jekyllrb
-github_username: jekyll
+sass:
+    style: compressed
 
-# GitHub Pages에서 원격 테마를 사용하기 위한 설정
-remote_theme: mouse-ear/jekyll-theme-simplex@main
+collections:
+    category:
+        output: true
+    authors:
+        output: false
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-remote-theme
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
