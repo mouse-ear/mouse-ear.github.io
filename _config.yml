@@ -1,40 +1,57 @@
+# _config.yml
+
 # -----------------------------------------------------------
-# Jekyll Configuration for Simplex Theme on GitHub Pages
+# 사이트 기본 설정
 # -----------------------------------------------------------
+title: "Mouse Ear Blog"                        # 블로그 제목
+email: "your-email@example.com"                # 연락처 이메일
+description: >-
+  Write an awesome description for your new site here.
+  This description appears in meta tags for SEO and social sharing.
+baseurl: ""                                    # GitHub Pages 루트에 배포 시 빈 값
+url: "https://mouse-ear.github.io"             # GitHub Pages URL
 
-title: "Simplex Theme Blog"
-description: "A simple, neat blogging theme."
-logo_img: /assets/img/icons/golasblog_logo.svg   # 필요 시 교체
-favicon: /assets/favicon.ico                     # 필요 시 교체
-global_tags: jekyll theme simplex golasblog responsive html5
-copyright: © YourName 2025
+# -----------------------------------------------------------
+# 소셜 및 미디어 정보 (선택)
+# -----------------------------------------------------------
+twitter_username: jekyllrb                    # 트위터 사용자명 (선택)
+github_username: yourgithubusername           # GitHub 사용자명 (필요에 따라 수정)
+logo_img: "/assets/img/icons/golasblog_logo.svg"  # 사이트 로고 (절대 경로)
+favicon: "/assets/favicon.ico"                # 파비콘 이미지
 
-# GitHub Pages에서 유효한 URL
-baseurl: ""  # 루트 도메인을 사용할 때는 비움
-url: "https://mouse-ear.github.io"
+# -----------------------------------------------------------
+# 글로벌 태그 (검색 및 메타 데이터 용, 선택)
+# -----------------------------------------------------------
+global_tags: "jekyll theme simplex golasblog responsive html5"
 
-# Simplex 원격 테마 설정 (andreondra 저장소 사용 예시)
+# -----------------------------------------------------------
+# 테마 및 빌드 설정
+# -----------------------------------------------------------
+# GitHub Pages에서 원격 테마 기능으로 Simplex 테마를 불러옴.
+# 여기서는 유효한 Simplex 테마 리포지토리(예: andreondra/jekyll-theme-simplex)를 사용.
 remote_theme: andreondra/jekyll-theme-simplex@master
 
-# GitHub Pages에서 remote_theme 기능이 작동하도록 플러그인 추가
+# 플러그인 목록: RSS 피드, 원격 테마 로드, SEO, 사이트맵 생성 등을 포함.
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Sass 압축 설정
+# Sass 설정: CSS를 압축하여 빠른 로딩을 도모.
 sass:
   style: compressed
 
-# 카테고리 / 작가 정보 기능 (테마에서 사용 가능)
+# -----------------------------------------------------------
+# 컬렉션 설정: 카테고리와 저자 정보 관리
+# -----------------------------------------------------------
 collections:
   category:
-    output: true
+    output: true     # _category 폴더의 파일들을 별도 페이지로 출력
   authors:
-    output: false
+    output: false    # 저자 정보는 필요 시 별도 페이지로 출력하지 않음
 
-# 카테고리 레이아웃 기본값 설정
+# 카테고리 파일의 기본 레이아웃 지정 (예: _category/category1.md에서 layout을 생략해도 "category" 레이아웃 사용)
 defaults:
   -
     scope:
@@ -43,7 +60,9 @@ defaults:
     values:
       layout: "category"
 
-# 빌드 시 제외할 항목들
+# -----------------------------------------------------------
+# 빌드 시 제외할 파일/디렉터리
+# -----------------------------------------------------------
 exclude:
   - Gemfile
   - Gemfile.lock
