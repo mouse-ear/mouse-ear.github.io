@@ -1,0 +1,24 @@
+- title: Home
+  url: "/"
+  icon: assets/img/icons/home.svg
+  hue: "var(--c-themeHueGreen)"
+
+- title: Categories
+  url: "#"
+  icon: assets/img/icons/category.svg
+  hue: "var(--c-themeHueBlue)"
+  subnav:
+    - title: Category 1
+      url: "/category/category1.html"
+      hue: "var(--c-themeHueRed)"
+    - title: Category 2
+      url: "/category/category2.html"
+      hue: "var(--c-themeHueBlue)"
+    - title: Category 3
+      url: "/category/category3.html"
+      hue: "var(--c-themeHueOrange)"
+
+- title: About
+  url: "/about.html"
+  icon: assets/img/icons/about.svg
+  hue: "var(--c-themeHuePurple)"
